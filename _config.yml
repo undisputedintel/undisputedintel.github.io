@@ -1,0 +1,37 @@
+# Site settings
+title: Christian Terrell Jr.
+email: undisputedintel@gmail.com
+description: >-
+  Cybersecurity student documenting the journey from zero to hired.
+  Learning pentesting, security analysis, and building a homelab on a budget.
+  
+baseurl: ""
+url: "https://christianterrell.com
+
+# Social links
+github_username: undisputedintel
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections for organizing content
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Christian Terrell"
+
+# Exclude from processing
+exclude:
+  - README.md

@@ -1,0 +1,163 @@
+---
+---
+
+@import "minima";
+
+// Cybersecurity-themed color scheme
+$cyber-dark: #0a0e27;
+$cyber-blue: #00d9ff;
+$cyber-green: #00ff41;
+$cyber-purple: #b026ff;
+$text-light: #e0e0e0;
+$text-dark: #1a1a1a;
+$bg-dark: #1a1f3a;
+$accent: #00d9ff;
+
+// Override Minima theme defaults
+body {
+  background-color: $bg-dark;
+  color: $text-light;
+  font-family: 'Courier New', monospace;
+  line-height: 1.6;
+}
+
+// Header styling
+.site-header {
+  background-color: $cyber-dark;
+  border-top: 3px solid $cyber-blue;
+  border-bottom: 1px solid $cyber-blue;
+  
+  .site-title {
+    color: $cyber-green;
+    font-weight: bold;
+    font-size: 1.8em;
+    letter-spacing: 2px;
+    
+    &:hover {
+      color: $cyber-blue;
+      text-decoration: none;
+    }
+  }
+  
+  .site-nav .page-link {
+    color: $text-light;
+    
+    &:hover {
+      color: $cyber-blue;
+    }
+  }
+}
+
+// Main content area
+.page-content {
+  background-color: $bg-dark;
+  padding: 30px 0;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  color: $cyber-green;
+  font-weight: bold;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  
+  &::before {
+    content: "> ";
+    color: $cyber-blue;
+  }
+}
+
+h1 { font-size: 2.2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.4em; }
+
+// Links
+a {
+  color: $cyber-blue;
+  text-decoration: none;
+  border-bottom: 1px dotted $cyber-blue;
+  
+  &:hover {
+    color: $cyber-green;
+    border-bottom: 1px solid $cyber-green;
+  }
+}
+
+// Code blocks (important for technical content)
+code {
+  background-color: $cyber-dark;
+  color: $cyber-green;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  border: 1px solid $cyber-blue;
+}
+
+pre {
+  background-color: $cyber-dark;
+  border: 1px solid $cyber-blue;
+  border-left: 3px solid $cyber-green;
+  padding: 15px;
+  overflow-x: auto;
+  
+  code {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+}
+
+// Blockquotes (for your motivational quotes)
+blockquote {
+  border-left: 3px solid $cyber-purple;
+  padding-left: 20px;
+  margin: 1.5em 0;
+  font-style: italic;
+  color: $cyber-blue;
+  background-color: rgba(176, 38, 255, 0.05);
+  padding: 15px 20px;
+}
+
+// Post list styling
+.post-list {
+  list-style: none;
+  
+  .post-link {
+    font-size: 1.4em;
+    color: $cyber-green;
+    
+    &:hover {
+      color: $cyber-blue;
+    }
+  }
+  
+  .post-meta {
+    color: $cyber-blue;
+    font-size: 0.9em;
+  }
+}
+
+// Footer
+.site-footer {
+  background-color: $cyber-dark;
+  border-top: 1px solid $cyber-blue;
+  color: $text-light;
+  
+  a {
+    color: $cyber-blue;
+    
+    &:hover {
+      color: $cyber-green;
+    }
+  }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  
+  h1 { font-size: 1.8em; }
+  h2 { font-size: 1.4em; }
+}
