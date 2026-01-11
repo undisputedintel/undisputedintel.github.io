@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Launching ChristianTerrell.com: Building in Public"
-date: 2026-01-08
+date: 2026-01-09
 categories: [meta, journey]
 tags: [github-pages, jekyll, career-transition, learning-in-public]
 ---
