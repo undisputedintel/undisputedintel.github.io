@@ -1,57 +1,77 @@
 ---
 ---
 
-@import "minima";
-
 // Cybersecurity-themed color scheme
 $cyber-dark: #0a0e27;
 $cyber-blue: #00d9ff;
 $cyber-green: #00ff41;
 $cyber-purple: #b026ff;
 $text-light: #e0e0e0;
-$text-dark: #1a1a1a;
 $bg-dark: #1a1f3a;
-$accent: #00d9ff;
 
-// Override Minima theme defaults
+// Base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: $bg-dark;
   color: $text-light;
-  font-family: 'Courier New', monospace;
+  font-family: 'Courier New', Consolas, monospace;
   line-height: 1.6;
+  font-size: 16px;
 }
 
-// Header styling
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Header
 .site-header {
   background-color: $cyber-dark;
   border-top: 3px solid $cyber-blue;
   border-bottom: 1px solid $cyber-blue;
+  padding: 20px 0;
+  
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
   .site-title {
     color: $cyber-green;
     font-weight: bold;
     font-size: 1.8em;
     letter-spacing: 2px;
+    text-decoration: none;
     
     &:hover {
       color: $cyber-blue;
-      text-decoration: none;
     }
   }
   
-  .site-nav .page-link {
-    color: $text-light;
-    
-    &:hover {
-      color: $cyber-blue;
+  .site-nav {
+    .page-link {
+      color: $text-light;
+      text-decoration: none;
+      margin-left: 20px;
+      
+      &:hover {
+        color: $cyber-blue;
+      }
     }
   }
 }
 
-// Main content area
+// Main content
 .page-content {
-  background-color: $bg-dark;
-  padding: 30px 0;
+  padding: 40px 0;
+  min-height: 70vh;
 }
 
 // Typography
@@ -70,6 +90,11 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: 2.2em; }
 h2 { font-size: 1.8em; }
 h3 { font-size: 1.4em; }
+h4 { font-size: 1.2em; }
+
+p {
+  margin-bottom: 1em;
+}
 
 // Links
 a {
@@ -81,15 +106,29 @@ a {
     color: $cyber-green;
     border-bottom: 1px solid $cyber-green;
   }
+  
+  &:visited {
+    color: $cyber-purple;
+  }
 }
 
-// Code blocks (important for technical content)
+// Lists
+ul, ol {
+  margin-left: 30px;
+  margin-bottom: 1em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+// Code blocks
 code {
   background-color: $cyber-dark;
   color: $cyber-green;
   padding: 2px 6px;
   border-radius: 3px;
-  font-family: 'Courier New', monospace;
+  font-family: 'Courier New', Consolas, monospace;
   border: 1px solid $cyber-blue;
 }
 
@@ -99,6 +138,7 @@ pre {
   border-left: 3px solid $cyber-green;
   padding: 15px;
   overflow-x: auto;
+  margin-bottom: 1em;
   
   code {
     background-color: transparent;
@@ -107,7 +147,7 @@ pre {
   }
 }
 
-// Blockquotes (for your motivational quotes)
+// Blockquotes
 blockquote {
   border-left: 3px solid $cyber-purple;
   padding-left: 20px;
@@ -118,13 +158,19 @@ blockquote {
   padding: 15px 20px;
 }
 
-// Post list styling
+// Post list
 .post-list {
   list-style: none;
+  margin-left: 0;
+  
+  li {
+    margin-bottom: 30px;
+  }
   
   .post-link {
     font-size: 1.4em;
     color: $cyber-green;
+    border-bottom: none;
     
     &:hover {
       color: $cyber-blue;
@@ -137,11 +183,32 @@ blockquote {
   }
 }
 
+// Post content
+.post-header {
+  margin-bottom: 30px;
+  
+  .post-title {
+    margin-top: 0;
+  }
+}
+
+.post-meta {
+  color: $cyber-blue;
+  font-size: 0.9em;
+}
+
+.post-content {
+  h2, h3, h4 {
+    margin-top: 1.5em;
+  }
+}
+
 // Footer
 .site-footer {
   background-color: $cyber-dark;
   border-top: 1px solid $cyber-blue;
-  color: $text-light;
+  padding: 30px 0;
+  margin-top: 40px;
   
   a {
     color: $cyber-blue;
@@ -152,7 +219,7 @@ blockquote {
   }
 }
 
-// Responsive adjustments
+// Responsive
 @media screen and (max-width: 600px) {
   body {
     font-size: 14px;
@@ -160,4 +227,14 @@ blockquote {
   
   h1 { font-size: 1.8em; }
   h2 { font-size: 1.4em; }
+  
+  .site-header .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .site-nav .page-link {
+    margin-left: 0;
+    margin-right: 15px;
+  }
 }
